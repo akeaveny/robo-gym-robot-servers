@@ -54,8 +54,9 @@ class UrRosBridge:
         self.tf_listener = tf.TransformListener()
 
         # TF2 Listener
-        self.tf2_buffer = tf2_ros.Buffer()
-        self.tf2_listener = tf2_ros.TransformListener(self.tf2_buffer)
+        self.tf_buffer = tf2_ros.Buffer()
+        self.listener = tf2_ros.TransformListener(self.tf_buffer)
+        self.transform_broadcaster = tf2_ros.TransformBroadcaster()
 
         # Static TF2 Broadcaster
         self.static_tf2_broadcaster = tf2_ros.StaticTransformBroadcaster()
